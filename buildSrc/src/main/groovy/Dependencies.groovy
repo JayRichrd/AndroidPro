@@ -33,4 +33,5 @@ interface Deps {
     def google_android_material = "com.google.android.material:material:1.6.1"
     def permissions_dispatcher_processor = "com.github.permissions-dispatcher:permissionsdispatcher-processor:4.9.1"
     def permissions_dispatcher_ktx = "com.github.permissions-dispatcher:ktx:1.1.3"
+    def reactivex_rxjava2_rxandroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
 }

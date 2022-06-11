@@ -32,4 +32,6 @@ dependencies {
     implementation Deps.androidx_core_ktx
     implementation Deps.androidx_constraintlayout
     implementation Deps.google_android_material
+    implementation Deps.reactivex_rxjava2_rxandroid
+    //implementation 'io.reactivex.rxjava2:rxjava:2.1.17'
 }
