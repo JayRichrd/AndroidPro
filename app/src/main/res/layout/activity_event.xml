@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cain.androidpro.event.CustomConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".event.EventActivity">
+
+    <Button
+        android:id="@+id/btv_event_demo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event Demo Btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_event_demo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/design_default_color_primary"
+        android:padding="10dp"
+        android:text="Event Demo Text"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btv_event_demo"
+        tools:ignore="HardcodedText" />
+
+</com.cain.androidpro.event.CustomConstraintLayout>

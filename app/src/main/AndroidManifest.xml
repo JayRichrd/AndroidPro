@@ -12,6 +12,9 @@
         android:theme="@style/Theme.RxJavaPro"
         tools:targetApi="31">
         <activity
+            android:name=".event.EventActivity"
+            android:exported="false" />
+        <activity
             android:name=".rxjava.RxjavaActivity"
             android:exported="false" />
         <activity
