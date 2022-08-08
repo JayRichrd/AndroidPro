@@ -20,8 +20,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Event"
-        app:layout_constraintEnd_toStartOf="@id/btv_holder"
+        app:layout_constraintEnd_toStartOf="@id/btv_animation"
         app:layout_constraintStart_toEndOf="@id/btv_rxjava"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btv_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animation"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
@@ -30,8 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="place holder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btv_rxjava"
         tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

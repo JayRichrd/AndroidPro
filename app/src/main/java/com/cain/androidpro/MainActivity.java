@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.cain.androidpro.animation.AnimationActivity;
 import com.cain.androidpro.event.EventActivity;
 import com.cain.androidpro.rxjava.RxjavaActivity;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         findViewById(R.id.btv_rxjava).setOnClickListener(this);
         findViewById(R.id.btv_event).setOnClickListener(this);
+        findViewById(R.id.btv_animation).setOnClickListener(this);
     }
 
     public void onClick(View v) {
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, RxjavaActivity.class));
             case R.id.btv_event:
                 startActivity(new Intent(this, EventActivity.class));
+            case R.id.btv_animation:
+                startActivity(new Intent(this, AnimationActivity.class));
             default:
                 break;
         }
