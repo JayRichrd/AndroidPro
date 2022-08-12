@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.cain.androidpro">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RxJavaPro"
         tools:targetApi="31">
+        <activity
+            android:name=".net.OkHttpActivity"
+            android:exported="false" />
         <activity
             android:name=".animation.AnimationActivity"
             android:exported="false" />

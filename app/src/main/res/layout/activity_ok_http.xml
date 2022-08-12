@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".net.OkHttpActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_okhttp_synchronous_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Synchronous Get"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_okhttp_asynchronous_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Asynchronous Get"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_okhttp_posting_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Posting a String"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_okhttp_synchronous_get" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,4 +34,5 @@ interface Deps {
     def permissions_dispatcher_processor = "com.github.permissions-dispatcher:permissionsdispatcher-processor:4.9.1"
     def permissions_dispatcher_ktx = "com.github.permissions-dispatcher:ktx:1.1.3"
     def reactivex_rxjava2_rxandroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
+    def squareup_okhttp3 = "com.squareup.okhttp3:okhttp:3.14.9"
 }
