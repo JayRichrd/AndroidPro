@@ -47,14 +47,15 @@ public class RxjavaActivity extends AppCompatActivity implements View.OnClickLis
         Observable.create((ObservableOnSubscribe<Integer>) emitter -> {
                     Logger.t(TAG).d("rxJavaSimpleDemo#subscribe: into");
                     emitter.onNext(1);
-                    emitter.onNext(2);
-                    emitter.onNext(3);
                     emitter.onComplete();
-                }).subscribeOn(Schedulers.single())
+                })
+                .subscribeOn(Schedulers.single())
+                .observeOn(Schedulers.newThread())
                 .map(integer -> {
                     Logger.t(TAG).d("rxJavaSimpleDemo#apply: integer = " + integer);
                     return integer + "";
-                }).observeOn(Schedulers.newThread())
+                })
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(Disposable d) {
