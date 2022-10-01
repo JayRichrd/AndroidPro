@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 
 import com.cain.androidpro.animation.AnimationActivity;
@@ -15,6 +16,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null){
+
+        }
         setContentView(R.layout.activity_main);
         findViewById(R.id.btv_rxjava).setOnClickListener(this);
         findViewById(R.id.btv_event).setOnClickListener(this);
@@ -33,4 +37,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {
+        if (savedInstanceState != null) {
+            onRestoreInstanceState(savedInstanceState);
+        }
+    }
+
 }
