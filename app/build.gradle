@@ -33,5 +33,7 @@ dependencies {
     implementation Deps.androidx_constraintlayout
     implementation Deps.google_android_material
     implementation Deps.reactivex_rxjava2_rxandroid
+    implementation Deps.squareup_okhttp3
+    implementation Deps.orhanobut_logger
     //implementation 'io.reactivex.rxjava2:rxjava:2.1.17'
 }
