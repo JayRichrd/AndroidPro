@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null){
+        if (savedInstanceState != null) {
 
         }
         setContentView(R.layout.activity_main);
@@ -44,9 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {
-        if (savedInstanceState != null) {
-            onRestoreInstanceState(savedInstanceState);
-        }
+        super.onRestoreInstanceState(savedInstanceState, persistentState);
     }
 
 }
