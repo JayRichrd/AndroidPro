@@ -21,7 +21,9 @@
             android:exported="false" />
         <activity
             android:name=".event.EventActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.cain.event" />
         <activity
             android:name=".rxjava.RxjavaActivity"
             android:exported="false" />
