@@ -4,6 +4,7 @@
     package="com.cain.androidpro">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -13,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RxJavaPro"
         tools:targetApi="31">
+        <activity
+            android:name=".jetpack.JetpackActivity"
+            android:exported="false"/>
         <activity
             android:name=".net.OkHttpActivity"
             android:exported="false" />
