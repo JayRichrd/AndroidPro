@@ -26,13 +26,13 @@
         <activity
             android:name=".event.EventActivity"
             android:exported="false"
-            android:launchMode="singleTask"
             android:taskAffinity="com.cain.event" />
         <activity
             android:name=".rxjava.RxjavaActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:launchMode="singleTask"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

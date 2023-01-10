@@ -16,6 +16,15 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
+    <Button
+        android:id="@+id/btv_start_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btv_event_demo"
+        tools:ignore="HardcodedText" />
+
     <TextView
         android:id="@+id/tv_event_demo"
         android:layout_width="wrap_content"
@@ -26,7 +35,7 @@
         android:text="Event Demo Text"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btv_event_demo"
+        app:layout_constraintTop_toBottomOf="@id/btv_start_main"
         tools:ignore="HardcodedText" />
 
 </com.cain.androidpro.event.CustomConstraintLayout>
