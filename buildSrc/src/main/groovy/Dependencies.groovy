@@ -37,4 +37,5 @@ interface Deps {
     def reactivex_rxjava2_rxandroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
     def squareup_okhttp3 = "com.squareup.okhttp3:okhttp:3.14.9"
     def orhanobut_logger = "com.orhanobut:logger:2.2.0"
+    def gson = "com.google.code.gson:gson:2.8.9"
 }

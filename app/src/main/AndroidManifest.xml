@@ -15,8 +15,11 @@
         android:theme="@style/Theme.RxJavaPro"
         tools:targetApi="31">
         <activity
+            android:name=".json.JsonActivity"
+            android:exported="false" />
+        <activity
             android:name=".jetpack.JetpackActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".net.OkHttpActivity"
             android:exported="false" />
@@ -32,8 +35,8 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTask"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

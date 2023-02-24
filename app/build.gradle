@@ -4,6 +4,9 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion Versions.compileSdk
+    buildFeatures {
+        viewBinding true
+    }
     defaultConfig {
         applicationId "com.cain.androidpro"
         minSdkVersion Versions.minSdk
@@ -35,5 +38,9 @@ dependencies {
     implementation Deps.reactivex_rxjava2_rxandroid
     implementation Deps.squareup_okhttp3
     implementation Deps.orhanobut_logger
+    implementation Deps.gson
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.4.+'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     //implementation 'io.reactivex.rxjava2:rxjava:2.1.17'
 }

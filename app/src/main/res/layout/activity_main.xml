@@ -48,9 +48,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="jetpack"
-        app:layout_constraintEnd_toStartOf="@id/btv_holder"
+        app:layout_constraintEnd_toStartOf="@id/btn_json"
         app:layout_constraintStart_toEndOf="@id/btv_okhttp"
         app:layout_constraintTop_toBottomOf="@id/btv_rxjava"
+        tools:ignore="HardcodedText" />
+
+
+    <Button
+        android:id="@+id/btn_json"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="json"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btv_jetpack"
+        app:layout_constraintTop_toBottomOf="@id/btv_event"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -58,9 +69,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="place holder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btv_jetpack"
-        app:layout_constraintTop_toBottomOf="@id/btv_event"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btv_okhttp"
         tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

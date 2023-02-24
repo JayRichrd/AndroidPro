@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.cain.androidpro.animation.AnimationActivity;
 import com.cain.androidpro.event.EventActivity;
 import com.cain.androidpro.jetpack.JetpackActivity;
+import com.cain.androidpro.json.JsonActivity;
 import com.cain.androidpro.net.OkHttpActivity;
 import com.cain.androidpro.rxjava.RxjavaActivity;
 import com.orhanobut.logger.Logger;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btv_animation).setOnClickListener(this);
         findViewById(R.id.btv_okhttp).setOnClickListener(this);
         findViewById(R.id.btv_jetpack).setOnClickListener(this);
+        findViewById(R.id.btn_json).setOnClickListener(this);
     }
 
     @Override
@@ -83,6 +85,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btv_jetpack:
                 startActivity(new Intent(this, JetpackActivity.class));
+                break;
+            case R.id.btn_json:
+                startActivity(new Intent(this, JsonActivity.class));
                 break;
             default:
                 break;
