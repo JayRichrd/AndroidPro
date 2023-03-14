@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidPro</string>
+    <string name="rv_item_test_text">这是一条测试文本</string>
 </resources>
