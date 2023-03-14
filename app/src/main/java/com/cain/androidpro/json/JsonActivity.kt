@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.cain.androidpro.R
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
 class JsonActivity : AppCompatActivity(), View.OnClickListener {
@@ -29,9 +30,15 @@ class JsonActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun parseTest() {
         val gson = GsonBuilder().registerTypeAdapterFactory(CustomTypeAdapterFactory()).create()
-        val jsonStr =
-            "{\"block\":[{\"id\":\"1\",\"name\":\"菜鸟教程\",\"url\":\"www.runoob.com\"},{\"id\":\"2\",\"name\":\"菜鸟工具\",\"url\":\"c.runoob.com\"},{\"id\":\"3\",\"name\":\"Google\",\"url\":\"www.google.com\"}],\"obj\":{\"id\":\"1\",\"name\":\"高手直通\",\"url\":\"www.baidu.com\"}}"
+        val jsonStr = "{\"block\":[{\"id\":\"1\",\"name\":\"菜鸟教程\",\"url\":\"www.runoob.com\"},{\"id\":\"2\",\"name\":\"菜鸟工具\",\"url\":\"c.runoob.com\"},{\"id\":\"3\",\"name\":\"Google\",\"url\":\"www.google.com\"}],\"obj\":{\"id\":\"1\",\"name\":\"高手直通\",\"url\":\"www.baidu.com\"}}"
         val preJsonItem = gson.fromJson(jsonStr, PreJsonItem::class.java)
         Log.i(TAG, "parseTest: preJsonItem = $preJsonItem")
+        val preJsonItemJsonStr = gson.toJson(preJsonItem)
+        Log.i(TAG, "parseTest: preJsonItemJsonStr = $preJsonItemJsonStr")
+        val jsonStr1 = "{\"sites\":1,\"obj\":{\"name\":\"hanmeimei\",\"id\":\"123\",\"url\":\"www.baidu.com\"}}"
+        val parentChildTest = Gson().fromJson(jsonStr1, ParentChildTest::class.java)
+        Log.i(TAG, "parseTest: parentChildTest = $parentChildTest")
+        val parentChildTestJsonStr = Gson().toJson(parentChildTest)
+        Log.i(TAG, "parseTest: parentChildTestJsonStr = $parentChildTestJsonStr")
     }
 }

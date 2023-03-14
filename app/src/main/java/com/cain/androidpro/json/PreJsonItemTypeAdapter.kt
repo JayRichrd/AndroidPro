@@ -8,16 +8,25 @@ import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonToken
 import com.google.gson.stream.JsonWriter
 
-class PreJsonItemTypeAdapter<T>(private val gson: Gson) : TypeAdapter<T>() {
+class PreJsonItemTypeAdapter(private val gson: Gson) : TypeAdapter<PreJsonItem>() {
     companion object {
         private const val TAG = "PreJsonItemTypeAdapter"
     }
 
-    override fun write(out: JsonWriter, value: T) {
-        TODO("Not yet implemented")
+    override fun write(out: JsonWriter, value: PreJsonItem) {
+        out.beginObject()
+        if (value.list.isNotEmpty()) {
+            out.name("block")
+            gson.getAdapter(Collection4JsonItem::class.java).write(out, Collection4JsonItem(value.list))
+        }
+        value.jsonObj?.apply {
+            out.name("obj1")
+            gson.getAdapter(JsonObject::class.java).write(out,this)
+        }
+        out.endObject()
     }
 
-    override fun read(jsonReader: JsonReader): T? {
+    override fun read(jsonReader: JsonReader): PreJsonItem {
         var fielName = ""
         val preJsonItem = PreJsonItem()
         try {
@@ -41,6 +50,7 @@ class PreJsonItemTypeAdapter<T>(private val gson: Gson) : TypeAdapter<T>() {
                         if (token == JsonToken.BEGIN_OBJECT) {
                             val typeAdapter = gson.getAdapter(JsonObject::class.java)
                             val jsonObj = typeAdapter.read(jsonReader)
+                            preJsonItem.jsonObj = jsonObj
                             Log.i(TAG, "read: jsonObj = $jsonObj")
                         }
                     }
@@ -54,6 +64,6 @@ class PreJsonItemTypeAdapter<T>(private val gson: Gson) : TypeAdapter<T>() {
         } catch (e: Throwable) {
             Log.e(TAG, "read: fieldName = $fielName, errorMsg = ${e.localizedMessage}")
         }
-        return preJsonItem as? T
+        return preJsonItem
     }
 }

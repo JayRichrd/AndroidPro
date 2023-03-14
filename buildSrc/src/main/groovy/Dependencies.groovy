@@ -5,7 +5,7 @@ interface Versions {
     def minSdk = 21
     def targetSdk = 31
     def compileSdk = 31
-    def jetbrains_kotlin = '1.7.0'
+    def jetbrains_kotlin = '1.8.0'
     def log4j = '2.18.0'
     def ndkAbi = ['armeabi-v7a', 'arm64-v8a']
     def ndk = '21.4.7075529'

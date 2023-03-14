@@ -2,20 +2,23 @@ package com.cain.androidpro.json
 
 import android.util.Log
 import com.google.gson.Gson
-import com.google.gson.TypeAdapter
 import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonWriter
 
-class JsonItemTypeAdapter<T>(private val gson: Gson) : TypeAdapter<T>() {
+class JsonItemTypeAdapter(gson: Gson) : AbsChatMsgTypeAdapter<JsonItem>(gson, null) {
     companion object {
         private const val TAG = "JsonItemTypeAdapter"
     }
 
-    override fun write(out: JsonWriter, value: T) {
-        TODO("Not yet implemented")
+    override fun write(jsonWriter: JsonWriter, value: JsonItem) {
+        jsonWriter.beginObject()
+        try2WritePrimitiveField(gson, jsonWriter, "name", value.name, ChatMsgFieldType.STRING)
+        try2WritePrimitiveField(gson, jsonWriter, "id", value.id, ChatMsgFieldType.STRING)
+        try2WritePrimitiveField(gson, jsonWriter, "url", value.url, ChatMsgFieldType.STRING)
+        jsonWriter.endObject()
     }
 
-    override fun read(jsonReader: JsonReader): T? {
+    override fun read(jsonReader: JsonReader): JsonItem {
         var fielName = ""
         val jsonItem = JsonItem()
         try {
@@ -44,6 +47,6 @@ class JsonItemTypeAdapter<T>(private val gson: Gson) : TypeAdapter<T>() {
         } catch (e: Throwable) {
             Log.e(TAG, "read: fieldName = $fielName, errorMsg = ${e.localizedMessage}")
         }
-        return jsonItem as? T
+        return jsonItem
     }
 }

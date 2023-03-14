@@ -1,5 +1,6 @@
 package com.cain.androidpro;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.cain.androidpro.jetpack.JetpackActivity;
 import com.cain.androidpro.json.JsonActivity;
 import com.cain.androidpro.net.OkHttpActivity;
 import com.cain.androidpro.rxjava.RxjavaActivity;
+import com.cain.androidpro.widget.rv.RVActivity;
 import com.orhanobut.logger.Logger;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -28,9 +30,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btv_rxjava).setOnClickListener(this);
         findViewById(R.id.btv_event).setOnClickListener(this);
         findViewById(R.id.btv_animation).setOnClickListener(this);
-        findViewById(R.id.btv_okhttp).setOnClickListener(this);
+        findViewById(R.id.btn_okhttp).setOnClickListener(this);
         findViewById(R.id.btv_jetpack).setOnClickListener(this);
         findViewById(R.id.btn_json).setOnClickListener(this);
+        findViewById(R.id.btn_rv).setOnClickListener(this);
     }
 
     @Override
@@ -69,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Logger.t(TAG).d("onDestroy#");
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btv_rxjava:
@@ -80,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btv_animation:
                 startActivity(new Intent(this, AnimationActivity.class));
                 break;
-            case R.id.btv_okhttp:
+            case R.id.btn_okhttp:
                 startActivity(new Intent(this, OkHttpActivity.class));
                 break;
             case R.id.btv_jetpack:
@@ -88,6 +92,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_json:
                 startActivity(new Intent(this, JsonActivity.class));
+                break;
+            case R.id.btn_rv:
+                startActivity(new Intent(this, RVActivity.class));
                 break;
             default:
                 break;

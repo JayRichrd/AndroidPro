@@ -6,16 +6,21 @@ import com.google.gson.TypeAdapter
 import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonWriter
 
-class Collection4JsonItemTypeAdapter<T>(private val gson: Gson) : TypeAdapter<T>() {
+class Collection4JsonItemTypeAdapter(private val gson: Gson) : TypeAdapter<Collection4JsonItem>() {
     companion object {
         private const val TAG = "Collection4JsonItemTypeAdapter"
     }
 
-    override fun write(out: JsonWriter, value: T) {
-        TODO("Not yet implemented")
+    override fun write(out: JsonWriter, value: Collection4JsonItem) {
+        out.beginArray()
+        val adapter = gson.getAdapter(JsonItem::class.java)
+        value.list.forEach {
+            adapter.write(out, it)
+        }
+        out.endArray()
     }
 
-    override fun read(jsonReader: JsonReader): T? {
+    override fun read(jsonReader: JsonReader): Collection4JsonItem {
         val collection4JsonItem = Collection4JsonItem()
         collection4JsonItem.list.clear()
         try {
@@ -31,6 +36,6 @@ class Collection4JsonItemTypeAdapter<T>(private val gson: Gson) : TypeAdapter<T>
         } catch (e: Throwable) {
             Log.e(TAG, "read: errorMsg = ${e.localizedMessage}")
         }
-        return collection4JsonItem as? T
+        return collection4JsonItem
     }
 }
