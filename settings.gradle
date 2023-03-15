@@ -1,2 +1,18 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+//includeBuild("plugin-version")
+
 rootProject.name = "AndroidPro"
-include ':app'
+include ':app', ':versions-plugin'

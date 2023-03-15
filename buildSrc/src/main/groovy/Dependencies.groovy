@@ -6,7 +6,6 @@ interface Versions {
     def targetSdk = 31
     def compileSdk = 31
     def jetbrains_kotlin = '1.8.0'
-    def log4j = '2.18.0'
     def room = '2.4.3'
     def wcdb = '1.0.8'
     def ndkAbi = ['armeabi-v7a', 'arm64-v8a']
@@ -20,7 +19,7 @@ interface Deps {
     /**
      * plugin
      */
-    def android_gradle_plugin = "com.android.tools.build:gradle:4.2.2"
+    def android_gradle_plugin = "com.android.tools.build:gradle:7.0.0"
     def kotlin_gradle_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.jetbrains_kotlin}"
     /**
      * dependence
