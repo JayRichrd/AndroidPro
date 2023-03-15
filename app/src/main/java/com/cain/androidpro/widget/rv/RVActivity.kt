@@ -14,15 +14,19 @@ class RVActivity : AppCompatActivity() {
             val prefix = this@RVActivity.getString(R.string.rv_item_test_text)
             val textRandom = Random(1000)
             for (i in 0 until 100) {
-                add(RvItemEntity("$prefix${textRandom.nextInt()}"))
+                add(RvItemEntity("$prefix$i"))
             }
         }
     }
 
+    private lateinit var viewBinding: ActivityRvBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_rv)
-        initView(ActivityRvBinding.inflate(LayoutInflater.from(this)))
+        //setContentView(R.layout.activity_rv)
+        viewBinding = ActivityRvBinding.inflate(LayoutInflater.from(this))
+        setContentView(viewBinding.root)
+        initView(viewBinding)
     }
 
     private fun initView(viewBinding: ActivityRvBinding) {

@@ -16,6 +16,12 @@ allprojects {
     }
 }
 
+subprojects { subproject ->
+    configurations.all {
+//        resolutionStrategy.force ""
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
