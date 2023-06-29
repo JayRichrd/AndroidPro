@@ -37,6 +37,7 @@ dependencies {
     implementation Deps.androidx_core_ktx
     implementation Deps.androidx_constraintlayout
     implementation Deps.androidx_room_runtime
+    implementation Deps.androidx_lifecycle_process
     annotationProcessor Deps.androidx_room_compiler
     implementation Deps.google_android_material
     implementation Deps.reactivex_rxjava2_rxandroid

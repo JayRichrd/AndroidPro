@@ -1,7 +1,7 @@
 package com.cain.androidpro;
 
 import android.app.Application;
-
+import androidx.lifecycle.ProcessLifecycleOwner;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
@@ -19,5 +19,16 @@ public class MyApplication extends Application {
                 .methodCount(1)
                 .build();
         Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy));
+        ProcessLifecycleOwner.get().getLifecycle().addObserver(new AppOnForegroundObserver() {
+            @Override
+            public void onAppForeground() {
+                Logger.i("onAppForeground#");
+            }
+
+            @Override
+            public void onAppBackground() {
+                Logger.i("onAppBackground#");
+            }
+        });
     }
 }

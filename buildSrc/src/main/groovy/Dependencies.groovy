@@ -31,6 +31,7 @@ interface Deps {
     def androidx_multidex = 'androidx.multidex:multidex:2.0.1'
     def androidx_room_runtime = "androidx.room:room-runtime:${Versions.room}"
     def androidx_room_compiler = "androidx.room:room-compiler:${Versions.room}"
+    def androidx_lifecycle_process = "androidx.lifecycle:lifecycle-process:2.4.0"
     //kotlin
     def jetbrains_kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.jetbrains_kotlin}"
     //third party from google
